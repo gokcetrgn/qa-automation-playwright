@@ -1,17 +1,12 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/LoginPage';
+import { test, expect } from '../../fixtures/pagesFixture';
+import { loginData } from '../../data/loginData/login';
 
-test('User should login successfully', async ({ page }) => {
-
-    const loginPage = new LoginPage(page);
-
-    await page.goto('/');
-
+test('User should login successfully', async ({ loginPage  }) => {
     await loginPage.navigateToLoginPage();
 
     await loginPage.login(
-        'gokcenaztorgan@gmail.com',
-        '123456789.'
+        loginData.validUser.email,
+        loginData.validUser.password
     );
 
     await expect(loginPage.loggedInText).toBeVisible();

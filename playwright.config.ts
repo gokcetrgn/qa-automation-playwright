@@ -44,9 +44,20 @@ export default defineConfig({
     },
 
     {
+      name: 'iphone-13',
+      use: { ...devices['iPhone 13'] },
+    },
+
+    {
+      name: 'pixel-7',
+      use: { ...devices['Pixel 7'] },
+    },
+
+    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
+
 
     // {
     //   name: 'webkit',
