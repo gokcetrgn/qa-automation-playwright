@@ -38,23 +38,31 @@ export default defineConfig({
   },
 
   projects: [
+      {
+          name: 'api',
+          testMatch: /.*api\/.*\.spec\.ts/
+      },
     {
       name: 'chromium',
+      testIgnore: /.*api\/.*\.spec\.ts/,
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
       name: 'iphone-13',
+      testIgnore: /.*api\/.*\.spec\.ts/,
       use: { ...devices['iPhone 13'] },
     },
 
     {
       name: 'pixel-7',
+      testIgnore: /.*api\/.*\.spec\.ts/,
       use: { ...devices['Pixel 7'] },
     },
 
     {
       name: 'firefox',
+      testIgnore: /.*api\/.*\.spec\.ts/,
       use: { ...devices['Desktop Firefox'] },
     },
 
