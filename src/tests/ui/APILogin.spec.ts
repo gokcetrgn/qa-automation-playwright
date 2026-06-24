@@ -1,19 +1,29 @@
 import { test, expect } from '../../fixtures/pagesFixture';
-import { createUser } from '../../utils/apiHelper';
+import { createUser, deleteUser } from '../../utils/apiHelper';
 
 test('User should login successfully with API created user',
 async ({ loginPage }) => {
 
     const user = await createUser();
 
-    await loginPage.navigateToLoginPage();
+    try {
 
-    await loginPage.login(
-        user.email,
-        user.password
-    );
+        await loginPage.navigateToLoginPage();
 
-    await expect(
-        loginPage.loggedInText
-    ).toBeVisible();
+        await loginPage.login(
+            user.email,
+            user.password
+        );
+
+        await expect(
+            loginPage.loggedInText
+        ).toBeVisible();
+
+    } finally {
+
+        await deleteUser(
+            user.email,
+            user.password
+        );
+    }
 });

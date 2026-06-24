@@ -12,7 +12,7 @@ import { loginData, users } from '../../data/loginData/login';
 
 users.forEach(user => {
 
-    test(user.scenario, async ({ loginPage }) => {
+     test(`@smoke ${user.scenario}`,async ({ loginPage }) => {
 
         await loginPage.navigateToLoginPage();
 

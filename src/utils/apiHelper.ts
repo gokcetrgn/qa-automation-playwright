@@ -36,3 +36,17 @@ export async function createUser() {
 
     return fakeUser;
 }
+export async function deleteUser(email: string, password: string) {
+
+    const apiContext = await request.newContext();
+
+    await apiContext.post(
+        'https://automationexercise.com/api/deleteAccount',
+        {
+            form: {
+                email,
+                password
+            }
+        }
+    );
+}
