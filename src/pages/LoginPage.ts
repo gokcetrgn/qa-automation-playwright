@@ -8,6 +8,7 @@ export class LoginPage extends BasePage{
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
     readonly loggedInText: Locator;
+    readonly  loginErrorMessage : Locator;
 
     constructor(page : Page)
     {
@@ -17,7 +18,7 @@ export class LoginPage extends BasePage{
         this.passwordInput = page.locator('input[data-qa="login-password"]');
         this.loginButton = page.locator('button[data-qa="login-button"]');
         this.loggedInText = page.locator('a').filter({ hasText: 'Logged in as' });
-
+        this.loginErrorMessage = this.loginErrorMessage = page.locator('p', {hasText: 'Your email or password is incorrect!'});
     }
 
 

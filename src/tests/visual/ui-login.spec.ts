@@ -6,8 +6,8 @@ test('login page visual test', async ({ page }) => {
         'https://automationexercise.com/login'
     );
 
-    await page.locator('h2')
-        .evaluate(el => el.textContent = 'TEST');
+    // await page.locator('h2')
+      //  .evaluate(el => el.textContent = 'TEST');
 
     await expect(page)
         .toHaveScreenshot('login-page.png');
