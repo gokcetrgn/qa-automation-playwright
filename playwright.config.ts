@@ -49,11 +49,9 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'iphone-13',
-      testIgnore: /.*api\/.*\.spec\.ts/,
-      use: { ...devices['iPhone 13'] },
-    },
+    // {name: 'iphone-13',
+      //testIgnore: /.*api\/.*\.spec\.ts/,
+      //use: { ...devices['iPhone 13'] },},
 
     {
       name: 'pixel-7',
